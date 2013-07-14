@@ -1,23 +1,21 @@
-#N canvas 823 643 571 303 10;
+#N canvas 821 640 724 332 10;
+#X declare -lib mrpeach;
 #X floatatom 91 153 5 0 0 0 - - -;
 #X obj 157 234 comport 32 57600;
 #X msg 195 154 close;
 #X msg 207 181 open 32;
-#X obj 100 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 100 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 100 69 metro 500;
 #X obj 98 253 print;
 #X obj 100 91 random 100;
 #X obj 100 113 + 155;
 #X obj 73 47 t a a;
-#X obj 322 94 env~;
-#X obj 322 48 adc~;
-#X floatatom 355 133 5 0 0 0 - - -;
-#X obj 310 176 moses 70;
-#X floatatom 334 237 5 0 0 0 - - -;
-#X obj 334 215 + 155;
-#X msg 310 198 0;
 #X floatatom 151 37 5 0 0 0 - - -;
+#X floatatom 226 59 5 0 0 0 - - -;
+#X obj 424 53 OSCrx 8888;
+#X obj 540 20 import mrpeach;
+#X obj 424 75 routeOSC /wind;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 0;
@@ -28,12 +26,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 0 0;
 #X connect 9 1 5 0;
-#X connect 10 0 12 0;
-#X connect 10 0 13 0;
-#X connect 11 0 10 0;
-#X connect 13 0 16 0;
-#X connect 13 1 15 0;
-#X connect 15 0 14 0;
-#X connect 15 0 1 0;
-#X connect 16 0 1 0;
-#X connect 17 0 5 1;
+#X connect 10 0 5 1;
+#X connect 11 0 1 0;
+#X connect 12 0 14 0;
+#X connect 14 0 1 0;
